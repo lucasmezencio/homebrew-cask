@@ -1,14 +1,13 @@
 cask 'solvespace' do
-  version '2.1'
-  sha256 '68255640cc291b044cf69fa67650590583623a331b2b25d23649f6c638ae559e'
+  version '2.3'
+  sha256 '2e93301bbfef9253b5ef614862d891e2ab84e18c6a1e4e36225c5d47cacabc2d'
 
   # github.com was verified as official when first introduced to the cask
   url "https://github.com/solvespace/solvespace/releases/download/v#{version}/solvespace.dmg"
   appcast 'https://github.com/solvespace/solvespace/releases.atom',
-          checkpoint: 'f81fcca30d49cc7b8c442d10ed814b8fb12f8dfe60369b4c48294904d931ab69'
+          checkpoint: '9941a53da74844d3eb4f36a905494f70ed3498e6fdbb18370792370e60ad2468'
   name 'SolveSpace'
-  homepage 'http://solvespace.com'
-  license :gpl
+  homepage 'http://solvespace.com/index.pl/'
 
-  app 'SolveSpace.app'
+  app 'solvespace.app'
 end

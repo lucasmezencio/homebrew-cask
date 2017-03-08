@@ -1,14 +1,13 @@
 cask 'min' do
-  version '1.4.1'
-  sha256 '2fa840f36c946b9a36c1ada237025f4345ad48d8309c79c0b9c4e63ea3f024a7'
+  version '1.5.1'
+  sha256 '702adc38b323ce68032fca433126248af55d08f6d73098a3b1ce89f4285528d0'
 
   # github.com/minbrowser/min was verified as official when first introduced to the cask
   url "https://github.com/minbrowser/min/releases/download/v#{version}/Min-v#{version}-darwin-x64.zip"
   appcast 'https://github.com/minbrowser/min/releases.atom',
-          checkpoint: '726031eecd9ac76c8a54b9270fefa4b4b5baf81e58bab8ae1d8dcf499f446f30'
+          checkpoint: 'b4dd5cc128a8a80ea14a393f8457140ef4e5b2b4f2482df630a1e63b503f288f'
   name 'Min'
-  homepage 'https://minbrowser.github.io/min'
-  license :oss
+  homepage 'https://minbrowser.github.io/min/'
 
   app 'Min.app'
 

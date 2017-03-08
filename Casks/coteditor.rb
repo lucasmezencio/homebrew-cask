@@ -9,20 +9,31 @@ cask 'coteditor' do
     sha256 '444133083698c7c94c2b029644f39a0e36982ae34c24745789fa890626188347'
     # github.com/coteditor/CotEditor was verified as official when first introduced to the cask
     url "https://github.com/coteditor/CotEditor/releases/download/#{version}/CotEditor_#{version}.dmg"
+  elsif MacOS.version <= :mavericks
+    version '2.5.7'
+    sha256 'f2c6eed9bfa31999f559396642e7bec0eb90ce0e3398f266fed8b3db5bdab37c'
+    # github.com/coteditor/CotEditor was verified as official when first introduced to the cask
+    url "https://github.com/coteditor/CotEditor/releases/download/#{version}/CotEditor_#{version}.dmg"
   else
-    version '2.5.6'
-    sha256 '36cf286ddfe9c00fdaf1723de02f9390f87d582d081fc7049f70c7b5d2992ead'
+    version '3.1.7'
+    sha256 'ae58c5f9c2300d5d171b95c0489cf5f663ce6247bdebabadf634f8ba70fe7132'
     # github.com/coteditor/CotEditor was verified as official when first introduced to the cask
     url "https://github.com/coteditor/CotEditor/releases/download/#{version}/CotEditor_#{version}.dmg"
   end
 
   appcast 'https://github.com/coteditor/CotEditor/releases.atom',
-          checkpoint: '5268af6fb256739cd81e610a4c814042a84c13621f299ecf2cd9bf9c307e6400'
+          checkpoint: '1e0bab5ad721c21c2ee218262d89a60feb529227cc9cb25ecac0febc890bc37d'
   name 'CotEditor'
   homepage 'https://coteditor.com/'
-  license :apache
 
   app 'CotEditor.app'
+  binary "#{appdir}/CotEditor.app/Contents/SharedSupport/bin/cot", target: 'cot'
 
-  zap delete: '~/Library/Containers/com.coteditor.CotEditor'
+  zap delete: [
+                '~/Library/Application Scripts/com.coteditor.CotEditor',
+                '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.coteditor.coteditor.sfl',
+                '~/Library/Caches/com.apple.helpd/SDMHelpData/Other/English/HelpSDMIndexFile/com.coteditor.CotEditor.help',
+                '~/Library/Caches/com.apple.helpd/SDMHelpData/Other/Japanese/HelpSDMIndexFile/com.coteditor.CotEditor.help',
+                '~/Library/Containers/com.coteditor.CotEditor',
+              ]
 end

@@ -13,7 +13,6 @@ cask 'maintenance' do
 
   name 'Maintenance'
   homepage 'http://www.titanium.free.fr/maintenance.html'
-  license :gratis
 
   # Unusual case: The software will stop working, or is dangerous to run, on the next macOS release.
   depends_on macos: [
@@ -25,13 +24,8 @@ cask 'maintenance' do
                       :mavericks,
                       :yosemite,
                       :el_capitan,
+                      :sierra,
                     ]
 
   app 'Maintenance.app'
-
-  caveats do
-    if [:leopard, :tiger].include?(MacOS.version.to_sym)
-      puts 'Maintenance only runs from an Administrator account on this version of OS X.'
-    end
-  end
 end

@@ -4,8 +4,12 @@ cask 'osu' do
 
   url "https://m1.ppy.sh/osu%21-#{version}.dmg"
   name 'osu!'
-  homepage 'https://osu.ppy.sh'
-  license :closed
+  homepage 'https://osu.ppy.sh/'
 
   app 'osu!.app'
+
+  zap delete: [
+                '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/osu!.wineskin.prefs.sfl',
+                '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/osu!20275532226wine.wineskin.prefs.sfl',
+              ]
 end

@@ -1,16 +1,15 @@
 cask 'boxcryptor' do
-  version '2.3.405.746'
-  sha256 '0067dad6e70041f38076fd26fa674f337e51b6532bb8e35a2ac534e7e4fb858b'
+  version '2.7.778'
+  sha256 '5147187c0434eb9736ef2ed2168e2142f97e55e55f5131c0ec6d7dcde51684a8'
 
   # d3k3ih5otj72mn.cloudfront.net was verified as official when first introduced to the cask
-  url "https://d3k3ih5otj72mn.cloudfront.net/Boxcryptor_v#{version}_Installer.dmg"
+  url "https://d3k3ih5otj72mn.cloudfront.net/boxcryptor/mac/Boxcryptor_v#{version}_Installer.dmg"
   appcast 'https://rink.hockeyapp.net/api/2/apps/7fd6db3e51a977132e3b120c613eaea8',
-          checkpoint: '5d0f6c73dd0c2a0fc578c87268187306baaa610adb6f4a1d9cc7976b657659fc'
+          checkpoint: '291babe1e979a31fbd5b756c5166a75f9ab06d109cfa38d06428301ce7db0bda'
   name 'Boxcryptor'
   homepage 'https://www.boxcryptor.com/en'
-  license :commercial
 
-  depends_on macos: '>= :lion'
+  depends_on macos: '>= :mavericks'
 
   app 'Boxcryptor.app'
 end

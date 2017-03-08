@@ -5,7 +5,6 @@ cask 'picasa' do
   url "https://dl.google.com/photos/picasamac#{version.no_dots}.dmg"
   name 'Picasa'
   homepage 'https://picasa.google.com/'
-  license :gratis
 
   app 'Picasa.app'
 
@@ -14,4 +13,8 @@ cask 'picasa' do
                 '~/Library/Application Support/Google/Picasa3',
                 '~/Library/Saved Application State/com.google.picasa.savedState',
               ]
+
+  caveats do
+    discontinued
+  end
 end

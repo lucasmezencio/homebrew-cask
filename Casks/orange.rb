@@ -1,11 +1,10 @@
 cask 'orange' do
-  version '3-3.3.5'
-  sha256 'e6a839ef6488d8becf979750701c8f395a97155b379ff8b5f7f12ab90a0cdb01'
+  version '3.3.10'
+  sha256 '85dcb15da9d9f5f10c5bcb702fc98f64c02b1a497d3143cf8e2301874066c70b'
 
-  url "http://orange.biolab.si/download/files/Orange#{version}.dmg"
+  url "http://orange.biolab.si/download/files/Orange#{version.major}-#{version}.dmg"
   name 'Orange'
   homepage 'http://orange.biolab.si/'
-  license :gpl
 
-  app 'Orange3.app'
+  app "Orange#{version.major}.app"
 end

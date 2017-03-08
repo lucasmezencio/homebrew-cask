@@ -6,17 +6,16 @@ cask 'sourcetree' do
     version '2.0.5.5'
     sha256 'f23129587703a706a37d5fdd9b2390875305b482a2b4e4b0e34bd49cba9b63c9'
   else
-    version '2.3.1'
-    sha256 'ef1e9f76d9fc3679d915cdc2ae8b159a02367faacde6be860310f29575be0fea'
+    version '2.4.1a'
+    sha256 'cec67981d4b8ea8a8e46ac7190d6d4d16a2164427a5c0e2419b1af327fc24815'
   end
 
   # atlassian.com was verified as official when first introduced to the cask
   url "https://downloads.atlassian.com/software/sourcetree/SourceTree_#{version}.zip"
   appcast 'https://www.sourcetreeapp.com/update/SparkleAppcast.xml',
-          checkpoint: '096494e7aef3f14c99700663b0397571b19f2af17e18a8fa63c757409cf79708'
+          checkpoint: '6031bd143374559a84872d0b9ecef5420173e11fb3a0453cfaa092878c6bc908'
   name 'Atlassian SourceTree'
   homepage 'https://www.sourcetreeapp.com/'
-  license :gratis
 
   auto_updates true
 
@@ -37,8 +36,4 @@ cask 'sourcetree' do
                 '~/Library/Preferences/com.torusknot.SourceTreeNotMAS.LSSharedFileList.plist',
                 '~/Library/Saved Application State/com.torusknot.SourceTreeNotMAS.savedState',
               ]
-
-  caveats do
-    files_in_usr_local
-  end
 end

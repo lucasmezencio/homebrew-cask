@@ -1,14 +1,13 @@
 cask 'devonthink-pro-office' do
-  version '2.9.2'
-  sha256 'a33b06bc6f504c987f708e688fa8eb9fdf2c70150950558ee6b18a9f81a2a4bc'
+  version '2.9.10'
+  sha256 '5fac84af68f0184275c42cb677df5f19334556ee39aa52d96322b3f1fc4662ba'
 
   # amazonaws.com/DTWebsiteSupport was verified as official when first introduced to the cask
   url "https://s3.amazonaws.com/DTWebsiteSupport/download/devonthink/#{version}/DEVONthink_Pro_Office.app.zip"
   appcast 'http://www.devon-technologies.com/fileadmin/templates/filemaker/sparkle.php?product=300125739&format=xml',
-          checkpoint: 'b210d90a515c3ccef2fd28d238f96792a764b6d72091af965df118f906995fd0'
+          checkpoint: 'b15440499c39624bd11d3490391f7eb7a3f4021a3e836d6e68f0d2688e6395ae'
   name 'DEVONthink Pro Office'
   homepage 'http://www.devontechnologies.com/products/devonthink/devonthink-pro-office.html'
-  license :commercial
 
   depends_on macos: '>= :mountain_lion'
 

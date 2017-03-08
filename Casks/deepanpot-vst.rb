@@ -4,8 +4,7 @@ cask 'deepanpot-vst' do
 
   url 'http://dotec-audio.com/release/DeePanpot/latest/mac/DeePanpotMac.zip'
   name 'DOTEC-AUDIO DeePanpot (VST)'
-  homepage 'http://dotec-audio.com/deepanpot.html'
-  license :gratis
+  homepage 'https://dotec-audio.com/deepanpot.html'
 
   vst_plugin 'DeePanpot.vst'
 end

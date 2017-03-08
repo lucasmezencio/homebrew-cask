@@ -1,13 +1,12 @@
 cask 'garmin-virb-edit' do
-  version '3.6.0'
-  sha256 'b4ed5948cc72db03966e1e1410d39af3430699b7b1628e7899568fc15c0516b8'
+  version '4.2.3'
+  sha256 'dcc9bf63494949f1eba13bbbb10d29a3de126865c70d1c26f25bd563013b75d9'
 
-  url "http://download.garmin.com/software/VIRBEditforMac_#{version.no_dividers}.dmg"
+  url "http://download.garmin.com/software/VIRBEditforMac_#{version.no_dots}.dmg"
   name 'Garmin VIRB Edit'
-  homepage 'https://www.garmin.com/en-US/shop/downloads/virb-edit'
-  license :commercial
+  homepage 'https://buy.garmin.com/en-US/US/p/573412'
 
-  depends_on macos: '>= 10.10'
+  depends_on macos: '>= :yosemite'
 
   pkg 'Install VIRB Edit.pkg'
 

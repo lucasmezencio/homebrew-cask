@@ -1,21 +1,18 @@
 cask 'filebot' do
-  version '4.7.2'
-  sha256 '888d98c63bc8f3a008cdb360f132822878c06dfa3f8fdec9fdacf2ba9855ba26'
+  version '4.7.8'
+  sha256 'd58c699ecd47a6f9cec2226acf11a01bb57c07ac093eaaed31c5bc4cdda7c7b7'
 
   # sourceforge.net/filebot was verified as official when first introduced to the cask
-  url "https://downloads.sourceforge.net/filebot/filebot/FileBot_#{version}/FileBot_#{version}-brew.tar.bz2"
-  appcast 'https://sourceforge.net/projects/filebot/rss?path=/filebot',
-          checkpoint: 'db948fcf10ec2bf554c46e33caaf26a190f642493d7790f7bb282beb6ec34b56'
+  url "https://downloads.sourceforge.net/filebot/filebot/FileBot_#{version}/FileBot_#{version}-darwin.tar.xz"
+  appcast 'https://app.filebot.net/update.xml',
+          checkpoint: '47b0253c28bac7d5182b615cd80c8cec9f67d59b697d9331e1f1c74cdae78c6c'
   name 'FileBot'
   homepage 'https://www.filebot.net/'
-  license :gpl
 
-  app "FileBot_#{version}-brew.app"
-  binary "#{appdir}/FileBot_#{version}-brew.app/Contents/MacOS/filebot.sh", target: 'filebot'
+  # The darwin package only includes the CLI tools. Launching the app bundle merely redirects to the Mac App Store.
+  binary 'FileBot.app/Contents/MacOS/filebot.sh', target: 'filebot'
 
-  zap delete: [
-                '~/Library/Preferences/net.filebot.ui.plist',
-              ]
+  zap delete: '~/Library/Preferences/net.filebot.ui.plist'
 
   caveats do
     depends_on_java('8')

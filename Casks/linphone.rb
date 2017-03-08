@@ -1,11 +1,12 @@
 cask 'linphone' do
-  version '3.9.1'
-  sha256 '0f45bb9cc2d2ea32631c0e8dedc28b2139d5cb0d55a007704c133b2ef41ffbe2'
+  version '3.10.2'
+  sha256 '5e88df179c1a238b229a4b334f6c1a94ec0a2cf9dbb62c8328f05ebab93c6eef'
 
   url "https://www.linphone.org/releases/macosx/linphone-#{version}.pkg"
+  appcast 'https://github.com/BelledonneCommunications/linphone/releases.atom',
+          checkpoint: 'cd2cb1b2738546c49e84067fcb58231e2e7ab3bfd510edbd9a87b0adb849d02f'
   name 'Linphone'
   homepage 'https://www.linphone.org/'
-  license :gpl
 
   pkg "linphone-#{version}.pkg"
 

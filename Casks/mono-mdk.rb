@@ -1,11 +1,11 @@
 cask 'mono-mdk' do
-  version '4.4.2.11'
-  sha256 :no_check # required as upstream package is updated in-place
+  version '4.8.0.495'
+  sha256 '09c2e30fb32112d3f4b1e5329119357e5728b08ba8131bbbc643d8adb9456522'
 
-  url "https://download.mono-project.com/archive/#{version.sub(%r{\.[^.]*$}, '')}/macos-10-universal/MonoFramework-MDK-#{version}.macos10.xamarin.universal.pkg"
+  # mono-project.azureedge.net/archive was verified as official when first introduced to the cask
+  url "https://mono-project.azureedge.net/archive/#{version.major_minor_patch}/macos-10-universal/MonoFramework-MDK-#{version}.macos10.xamarin.universal.pkg"
   name 'Mono'
-  homepage 'http://mono-project.com/'
-  license :oss
+  homepage 'http://www.mono-project.com/'
 
   pkg "MonoFramework-MDK-#{version}.macos10.xamarin.universal.pkg"
 

@@ -1,14 +1,13 @@
 cask 'godot' do
-  version '2.0.3'
-  sha256 '477ef5de5909a4b42fb408327554252ce8da2ede8ba522f36f724d7cca1cdc4b'
+  version '2.1.2'
+  sha256 'ca831d5654271f0c3b8a0bf948158b23e49570a39a0ff3ed376e2b836d5e9da7'
 
   # downloads.tuxfamily.org/godotengine was verified as official when first introduced to the cask
-  url "https://downloads.tuxfamily.org/godotengine/#{version}/Godot_v#{version}_stable_osx64.zip"
+  url "https://downloads.tuxfamily.org/godotengine/#{version}/Godot_v#{version}-stable_osx.fat.zip"
   appcast 'https://github.com/godotengine/godot/releases.atom',
-          checkpoint: 'eb4ed6f28e234b348b78db937c4ee160150dd41b7a12e13b85d8a04207107afe'
+          checkpoint: '2a236ab77cfb11a6478b72a02a3e76283ad26ecea4c30c61734d348212e42aba'
   name 'Godot Engine'
-  homepage 'https://www.godotengine.org/'
-  license :mit
+  homepage 'https://godotengine.org/'
 
   app 'Godot.app'
 end

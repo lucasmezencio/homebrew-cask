@@ -8,7 +8,8 @@ cask 'sidplay' do
           checkpoint: 'dcdf4de0dd4e7bdbebda68c26e156b57f4199f23d89176ca9bc3159377d4ac58'
   name 'SIDPLAY'
   homepage 'http://www.sidmusic.org/sidplay/mac/'
-  license :gpl
+
+  depends_on macos: '>= :el_capitan'
 
   app 'SIDPLAY.app'
 end

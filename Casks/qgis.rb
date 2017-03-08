@@ -1,14 +1,13 @@
 cask 'qgis' do
-  version '2.14.3-1'
-  sha256 '844029c1e92974722d7b4e58e78aa4df041d045a161945cc7a37b38d692d4e55'
+  version '2.18.2-1'
+  sha256 '6bb3084e80fdb44ca6695093c9713a30423bd091af3a64ac5086a565703e350b'
 
   url "http://www.kyngchaos.com/files/software/qgis/QGIS-#{version}.dmg"
   name 'QGIS'
   homepage 'http://www.kyngchaos.com/software/qgis'
-  license :gpl
 
   depends_on cask: 'gdal-framework'
-  depends_on formula: 'matplotlib'
+  depends_on formula: 'homebrew/science/matplotlib'
 
   pkg '4 Install QGIS.pkg'
 

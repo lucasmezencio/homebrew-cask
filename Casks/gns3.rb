@@ -1,14 +1,14 @@
 cask 'gns3' do
-  version '1.5.1'
-  sha256 '4769c15ae372482369bebae6ebea3a356fdfe138fa8882a60708c8bbe7cd788a'
+  # note: "3" is not a version number, but an intrinsic part of the product name
+  version '1.5.3'
+  sha256 '5c5498883a626563f50c7da7bf7ed7232d1937373bc6f2592a4cdd106505d926'
 
   # github.com/GNS3/gns3-gui was verified as official when first introduced to the cask
   url "https://github.com/GNS3/gns3-gui/releases/download/v#{version}/GNS3-#{version}.dmg"
   appcast 'https://github.com/GNS3/gns3-gui/releases.atom',
-          checkpoint: 'ebe5570ab80918508ebe725264d04d98abe08127368addb6135534e68474e3f9'
+          checkpoint: '0de7220e36db7890c7a778248dac66c1fca4835387d2a28273cd698f2c180b69'
   name 'GNS3'
   homepage 'https://www.gns3.com/'
-  license :gpl
 
   app 'GNS3.app'
 end

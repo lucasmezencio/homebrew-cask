@@ -10,8 +10,7 @@ cask 'patchblocks' do
   end
 
   name 'Patchblocks'
-  homepage 'http://patchblocks.com/'
-  license :gratis
+  homepage 'http://www.patchblocks.com/'
 
   app 'Patchblocks.app'
 end

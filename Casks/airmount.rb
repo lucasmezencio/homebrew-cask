@@ -2,10 +2,9 @@ cask 'airmount' do
   version :latest
   sha256 :no_check
 
-  url 'https://www.airmountapp.com/osx/AirMount.pkg'
+  url 'https://cdn.airmountapp.com/download/osx/installers/AirMount.pkg'
   name 'AirMount'
   homepage 'https://www.airmountapp.com/'
-  license :gratis
 
   depends_on cask: 'osxfuse'
 

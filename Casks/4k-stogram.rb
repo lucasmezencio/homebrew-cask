@@ -1,11 +1,10 @@
 cask '4k-stogram' do
-  version '2.0'
-  sha256 'a4ff472fcf5c46c7ca82f9ad5d85d45048fe8d0553588bedf8e41c2564b968cf'
+  version '2.2'
+  sha256 '1176ba51644096cd5d1ad9eccd5ba03eca50439c132723d042919e9739726353'
 
   url "https://downloads.4kdownload.com/app/4kstogram_#{version}.dmg"
   name '4K Stogram'
   homepage 'https://www.4kdownload.com/products/product-stogram'
-  license :gratis
 
   app '4K Stogram.app'
 end

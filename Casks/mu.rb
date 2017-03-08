@@ -4,8 +4,7 @@ cask 'mu' do
 
   url 'http://codewith.mu/mu.zip'
   name 'Mu'
-  homepage 'http://codewith.mu'
-  license :gpl
+  homepage 'https://codewith.mu/'
 
   app 'Mu.app'
 end

@@ -1,14 +1,15 @@
 cask 'textmate' do
-  version '2.0-beta.12.4'
-  sha256 'c5bc5fedd59db7b2e4b1b59c317f599441b62b4670c76ff04bb9ebafc9ee9a6a'
+  version '2.0-rc.7'
+  sha256 'cec681703045eae3d49fde2f94619256f089c1413b1750773dba5e6ca7bc1e20'
 
   # github.com/textmate/textmate was verified as official when first introduced to the cask
   url "https://github.com/textmate/textmate/releases/download/v#{version}/TextMate_#{version}.tbz"
   appcast 'https://github.com/textmate/textmate/releases.atom',
-          checkpoint: '459f307de03dada0a6f9bc36b561f1c01ebc705fca9bbc4598aa57ce9648a5b6'
+          checkpoint: '3b9a2f7f90cf9f46232fd530bf98fb0295ad749eb6bb03312391c70e33a5a6ae'
   name 'TextMate'
   homepage 'https://macromates.com/'
-  license :gpl
+
+  auto_updates true
 
   app 'TextMate.app'
   binary "#{appdir}/TextMate.app/Contents/Resources/mate"

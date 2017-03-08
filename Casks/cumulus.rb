@@ -1,14 +1,13 @@
 cask 'cumulus' do
-  version '0.7.1'
-  sha256 '43cc394b342e56d4dfbdfcded4f98fcdaaf92fd0097d7a6fa4cabc46794156e7'
+  version '0.10.0'
+  sha256 'a48b4f521e6263fb87e33baed71d83cd0680901a8bb006b43af57900d17084a0'
 
   # github.com/gillesdemey/Cumulus was verified as official when first introduced to the cask
   url "https://github.com/gillesdemey/Cumulus/releases/download/v#{version}/Cumulus-#{version}-osx.dmg"
   appcast 'https://github.com/gillesdemey/Cumulus/releases.atom',
-          checkpoint: '8ad60dd31679946c1c03a8d6afa4b6a14fa45760b98fb06924e2ed4491790c54'
+          checkpoint: '43399ed55bb1f513470e8e331d218cbe20c7a1a406c7bdc6d5f2885d92f425bf'
   name 'Cumulus'
   homepage 'https://gillesdemey.github.io/Cumulus/'
-  license :oss
 
   app 'Cumulus.app'
 

@@ -12,8 +12,7 @@ cask 'idisplay' do
   end
 
   name 'iDisplay'
-  homepage 'http://getidisplay.com/'
-  license :gratis
+  homepage 'https://getidisplay.com/'
 
   app 'iDisplay.app'
 end

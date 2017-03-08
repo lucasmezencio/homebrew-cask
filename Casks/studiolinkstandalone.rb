@@ -1,14 +1,13 @@
 cask 'studiolinkstandalone' do
-  version '16.02.2-beta'
-  sha256 '721825e9e22dee10b0e87e49cc203b164e166e4433bbd94c099f82b5678ce52c'
+  version '16.12.1-beta'
+  sha256 '2840d9e3aba90bef9a1b672003c125d499d05ca23e660f933dc087c40741878e'
 
   # github.com/Studio-Link-v2/backend was verified as official when first introduced to the cask
   url "https://github.com/Studio-Link-v2/backend/releases/download/v#{version}/studio-link-standalone-osx.zip"
   appcast 'https://github.com/Studio-Link-v2/backend/releases.atom',
-          checkpoint: 'f12e402194581d2fc3c8230faa2b2b069a3b57d6d5ad5df3df3c0b83d6103098'
+          checkpoint: '9e80271ad4e47265ce19b1f1438c476eb3a3bd014e3d9f35b0d770aef856b39d'
   name 'Studio Link Standalone'
   homepage 'https://doku.studio-link.de/standalone/installation-standalone.html'
-  license :bsd
 
   app 'StudioLinkStandalone.app'
 

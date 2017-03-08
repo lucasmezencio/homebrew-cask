@@ -10,8 +10,7 @@ cask 'skype' do
   end
 
   name 'Skype'
-  homepage 'https://www.skype.com'
-  license :gratis
+  homepage 'https://www.skype.com/'
 
   auto_updates true
 

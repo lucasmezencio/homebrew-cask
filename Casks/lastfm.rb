@@ -7,7 +7,15 @@ cask 'lastfm' do
           checkpoint: '7a9b0239c6af0128a3eff20c46c3893cee1f3a57786f6c2fca8a8df8e8993280'
   name 'Last.fm Scrobbler'
   homepage 'https://www.last.fm/'
-  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
   app 'Last.fm.app'
+
+  zap delete: [
+                '~/Library/Application Support/CrashReporter/Last.fm*',
+                '~/Library/Application Support/Last.fm',
+                '~/Library/Caches/fm.last.Scrobbler',
+                '~/Library/Caches/Last.fm',
+                '~/Library/Logs/Last.fm',
+                '~/Library/Preferences/fm.last*',
+              ]
 end

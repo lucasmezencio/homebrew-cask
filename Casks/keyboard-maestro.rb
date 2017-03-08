@@ -1,12 +1,11 @@
 cask 'keyboard-maestro' do
-  version '7.2.1'
-  sha256 'f3ab706fcfe97ebf6523baae4a5ebcb1b032f2f757a77ffb633f4dc4ac6d96ea'
+  version '7.3.1'
+  sha256 '844e2fa2f7c9fbd8029d855e4f42e950d86c0bb980cd65694d1aa2f7a4da1994'
 
   # stairways.com was verified as official when first introduced to the cask
   url "https://files.stairways.com/keyboardmaestro-#{version.no_dots}.zip"
   name 'Keyboard Maestro'
-  homepage 'https://www.keyboardmaestro.com/'
-  license :commercial
+  homepage 'https://www.keyboardmaestro.com/main/'
 
   depends_on macos: '>= :yosemite'
 

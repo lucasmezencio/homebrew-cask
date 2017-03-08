@@ -1,11 +1,10 @@
 cask 'alfred' do
-  version '3.0.3_694'
-  sha256 '8edc1acba0bc559cfb76cbc5f627d7c756d1afe89d68dac16a025382c564604e'
+  version '3.3.1_806'
+  sha256 'f573383968c7a95ee9439a8f6bbfda389e2c589a05278870c475cde1e8609938'
 
   url "https://cachefly.alfredapp.com/Alfred_#{version}.zip"
   name 'Alfred'
   homepage 'https://www.alfredapp.com/'
-  license :freemium
 
   auto_updates true
   accessibility_access true

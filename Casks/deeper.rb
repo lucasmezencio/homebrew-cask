@@ -13,7 +13,6 @@ cask 'deeper' do
 
   name 'Deeper'
   homepage 'http://www.titanium.free.fr/deeper.html'
-  license :gratis
 
   # Unusual case: The software will stop working, or is dangerous to run, on the next macOS release.
   depends_on macos: [
@@ -25,13 +24,8 @@ cask 'deeper' do
                       :mavericks,
                       :yosemite,
                       :el_capitan,
+                      :sierra,
                     ]
 
   app 'Deeper.app'
-
-  caveats do
-    if [:leopard, :tiger].include?(MacOS.version.to_sym)
-      puts 'Deeper only runs from an Administrator account on this version of OS X.'
-    end
-  end
 end

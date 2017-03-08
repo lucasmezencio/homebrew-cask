@@ -1,14 +1,13 @@
 cask 'turbo-boost-switcher' do
-  version '1.2.0'
-  sha256 'c1b42d0aac3114a0bef8bfcdbfc948387738fd333210e58563c0c161d29dcb9a'
+  version '2.4.0'
+  sha256 'ae7cab0ecbf750becf438d45104e20b7332788d9479cc1bf7b1d1dc6a91a10d7'
 
   # s3.amazonaws.com/turbo-boost-switcher was verified as official when first introduced to the cask
-  url "https://s3.amazonaws.com/turbo-boost-switcher/TurboBoostSwitcherv#{version}.zip"
+  url "https://s3.amazonaws.com/turbo-boost-switcher/Turbo+Boost+Switcher_#{version}.zip"
   name 'Turbo Boost Switcher'
   homepage 'http://www.rugarciap.com/turbo-boost-switcher-for-os-x/'
-  license :gpl
 
-  app 'Turbo Boost Switcher.app'
+  app 'Turbo Boost Switcher (English).app'
 
   uninstall quit:       'rugarciap.com.Turbo-Boost-Switcher',
             kext:       'com.rugarciap.DisableTurboBoost',

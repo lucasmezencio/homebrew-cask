@@ -1,14 +1,20 @@
 cask 'chefdk' do
-  version '0.17.17-1'
-  sha256 'd38fddc706f202bb2871f931001ab12d4a8e0795c694adff9a3962a4aa7807e2'
+  if MacOS.version == :mountain_lion
+    version '0.11.2-1'
+    sha256 '56899eab322cacac7f445a24d3159af34fccb5910642f4535eff4ee47321fe56'
+  else
+    version '1.2.22-1'
+    sha256 '5c435de289e90da45938a0f1a1f7e472e73a84f9b6bbe93e50342e11cc935458'
+  end
 
-  url "https://packages.chef.io/stable/mac_os_x/10.11/chefdk-#{version}.dmg"
-  appcast 'https://www.chef.io/chef/metadata-chefdk?p=mac_os_x&pv=10.11&m=x86_64&v=latest&prerelease=false',
-          checkpoint: '5d2d05c6d645d7e7e9df6fc4b9005f44f70dfa4fb2b72718c863a70d4e59101a'
+  url "https://packages.chef.io/stable/mac_os_x/#{MacOS.version}/chefdk-#{version}.dmg"
+  appcast "https://www.chef.io/chef/metadata-chefdk?p=mac_os_x&pv=#{MacOS.version}&m=x86_64&v=latest&prerelease=false",
+          checkpoint: 'd6ccec9ff6bc78bdc2be118667aecf01e0f1b91d030a0bfdb8e167cdd621427d'
   name 'Chef Development Kit'
   name 'ChefDK'
-  homepage 'https://downloads.chef.io/chef-dk/'
-  license :apache
+  homepage 'https://downloads.chef.io/chefdk/'
+
+  depends_on macos: '>= :mountain_lion'
 
   pkg "chefdk-#{version}.pkg"
 
@@ -25,11 +31,12 @@ cask 'chefdk' do
                        '/usr/local/bin/chef-client',
                        '/usr/local/bin/chef-shell',
                        '/usr/local/bin/chef-solo',
-                       '/usr/local/bin/chef-zero',
+                       '/usr/local/bin/chef-vault',
                        '/usr/local/bin/cookstyle',
+                       '/usr/local/bin/dco',
                        '/usr/local/bin/delivery',
-                       '/usr/local/bin/fauxhai',
                        '/usr/local/bin/foodcritic',
+                       '/usr/local/bin/inspec',
                        '/usr/local/bin/kitchen',
                        '/usr/local/bin/knife',
                        '/usr/local/bin/ohai',
@@ -38,4 +45,6 @@ cask 'chefdk' do
                        '/usr/local/bin/pushy-service-manager',
                        '/usr/local/bin/rubocop',
                      ]
+
+  zap delete: '~/.chefdk/'
 end

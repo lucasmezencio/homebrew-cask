@@ -1,20 +1,21 @@
 cask 'anylogic' do
-  version '7.3.5'
-  sha256 '190bc6555b637c5ecbf40d1f8b8966d097b1bac10e12dc5eaf01a25af75e3971'
+  version '7.3.6'
+  sha256 '798a4002ed8eed2f307896977112a6a54e58dd45615f3523eee190fc1f8aa72b'
 
   url "http://www.anylogic.com/files/anylogic-ple-#{version}.dmg"
   name 'AnyLogic'
-  homepage 'http://www.anylogic.com'
-  license :gratis
+  homepage 'https://www.anylogic.com/'
 
-  depends_on arch: :x86_64
   depends_on macos: '>= :lion'
 
   pkg 'Install AnyLogic.pkg'
 
   uninstall pkgutil: 'com.anylogic.AnyLogic'
 
-  zap delete: '~/Library/Caches/com.anylogic.AnyLogic'
+  zap delete: [
+                '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.anylogic.anylogic.sfl',
+                '~/Library/Caches/com.anylogic.AnyLogic',
+              ]
 
   caveats do
     depends_on_java('8')

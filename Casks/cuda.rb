@@ -1,11 +1,10 @@
 cask 'cuda' do
-  version '7.5.27'
-  sha256 'ff3699703a914ba6f71f76bc412cc4cc2cb8ce6fca435044d8780602b5a32e89'
+  version '8.0.61'
+  sha256 'b70a193cbe0a798d7363abab88ab5190409d237d7e13bf8682682fbbeac01847'
 
-  url "http://developer.download.nvidia.com/compute/cuda/#{version.major_minor}/Prod/local_installers/cuda_#{version}_mac.dmg"
+  url "https://developer.nvidia.com/compute/cuda/#{version.major_minor}/Prod2/local_installers/cuda_#{version}_mac-dmg"
   name 'Nvidia CUDA'
   homepage 'https://developer.nvidia.com/cuda-zone'
-  license :other
 
   installer script: 'CUDAMacOSXInstaller.app/Contents/MacOS/CUDAMacOSXInstaller',
             args:   ['--accept-eula', '--silent']

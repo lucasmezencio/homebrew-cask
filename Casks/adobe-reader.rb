@@ -1,13 +1,12 @@
 cask 'adobe-reader' do
-  version '15.017.20050'
-  sha256 '38509de0ceda1b51d44f247098d2933455e6c5a34cc977132ae9264dca0ebecf'
+  version '15.023.20053'
+  sha256 '5dd1cffa2bd23be9708b0690ca1ce5bdf0ab708da129ca11c843b6670a73390d'
 
   url "http://ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/#{version.no_dots}/AcroRdrDC_#{version.no_dots}_MUI.dmg"
   name 'Adobe Acrobat Reader DC'
-  homepage 'https://www.adobe.com/products/reader.html'
-  license :gratis
+  homepage 'https://acrobat.adobe.com/us/en/acrobat/pdf-reader.html'
 
-  depends_on macos: '>= 10.9'
+  depends_on macos: '>= :mavericks'
 
   pkg "AcroRdrDC_#{version.no_dots}_MUI.pkg"
 

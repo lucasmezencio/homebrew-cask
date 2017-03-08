@@ -1,20 +1,14 @@
 cask 'libreoffice' do
-  if Hardware::CPU.is_32_bit? || MacOS.version < :mountain_lion
-    version '4.3.7.2'
-    sha256 '2964a952ab633426df402de2f128cf788354ac622b7c30b25209d185d17617ec'
-    # documentfoundation.org was verified as official when first introduced to the cask
-    url "https://downloadarchive.documentfoundation.org/libreoffice/old/#{version}/mac/x86/LibreOffice_#{version}_MacOS_x86.dmg"
-  else
-    version '5.2.0'
-    sha256 '4de9ed18496a8983ffa2e906f0fdd216741a93a26261d5bf7ebc4c71bb7d7c24'
-    # documentfoundation.org was verified as official when first introduced to the cask
-    url "https://download.documentfoundation.org/libreoffice/stable/#{version}/mac/x86_64/LibreOffice_#{version}_MacOS_x86-64.dmg"
-  end
+  version '5.3.0'
+  sha256 '430f9b2d324e58de5b47f70be46ee2a4690e36c0612e04314f7a99c4fca7f059'
+
+  # documentfoundation.org was verified as official when first introduced to the cask
+  url "https://download.documentfoundation.org/libreoffice/stable/#{version}/mac/x86_64/LibreOffice_#{version}_MacOS_x86-64.dmg"
   name 'LibreOffice'
   homepage 'https://www.libreoffice.org/'
-  license :mpl
-  gpg "#{url}.asc",
-      key_id: 'c2839ecad9408fbe9531c3e9f434a1efafeeaea3'
+  gpg "#{url}.asc", key_id: 'c2839ecad9408fbe9531c3e9f434a1efafeeaea3'
+
+  depends_on macos: '>= :mountain_lion'
 
   app 'LibreOffice.app'
   binary "#{appdir}/LibreOffice.app/Contents/MacOS/gengal"
@@ -36,11 +30,12 @@ cask 'libreoffice' do
       #!/bin/sh
       '#{appdir}/LibreOffice.app/Contents/MacOS/soffice' "$@"
     EOS
-    FileUtils.chmod '+x', shimscript
+    set_permissions shimscript, '+x'
   end
 
   zap delete: [
                 '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.libreoffice.script.sfl',
                 '~/Library/Application Support/LibreOffice',
+                '~/Library/Saved Application State/org.libreoffice.script.savedState',
               ]
 end

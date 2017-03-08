@@ -1,13 +1,22 @@
 cask 'geekbench' do
-  version '3.4.1'
-  sha256 '9f2730472bba9fd39554290f465d37c32792debc5b20c9840efd1f79d40ca94c'
+  if MacOS.version <= :mavericks
+    version '3.4.1'
+    sha256 '9f2730472bba9fd39554290f465d37c32792debc5b20c9840efd1f79d40ca94c'
 
-  url "https://cdn.primatelabs.com/Geekbench-#{version}-Mac.zip"
-  appcast 'https://www.primatelabs.com/appcast/geekbench3.xml',
-          checkpoint: '23877fa30558eada7e7beeefee4fa307c7a7ac3fad79b3c250fa09f4c68081c9'
+    # cdn.primatelabs.com was verified as official when first introduced to the cask
+    url "https://cdn.primatelabs.com/Geekbench-#{version}-Mac.zip"
+  else
+    version '4.0.4'
+    sha256 'eec5dd454cfe3c5d794975b9989361e7d7c52143c16533adec566f0886c15d72'
+
+    # cdn.primatelabs.com was verified as official when first introduced to the cask
+    url "https://cdn.primatelabs.com/Geekbench-#{version}-Mac.dmg"
+    appcast "https://www.primatelabs.com/appcast/geekbench#{version.major}.xml",
+            checkpoint: 'b0d857cef5ea534f88d51f8faea53f574ae8511945e614ac54146ddb52c6bf86'
+  end
+
   name 'Geekbench'
-  homepage 'https://www.primatelabs.com/geekbench/'
-  license :commercial
+  homepage 'http://www.geekbench.com/'
 
-  app 'Geekbench 3.app'
+  app "Geekbench #{version.major}.app"
 end

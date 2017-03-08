@@ -1,22 +1,23 @@
 cask 'parallels-desktop' do
-  version '12.0.0-41273'
-  sha256 '85489b3b55655087ca57733e2e95650e03d6eb441389e570bd4f2f0c8be37245'
+  version '12.1.3-41532'
+  sha256 '2d2ea1d4db198c6f7f1d354a194f690eab960113c585ecd2f1b7c9ebcef80d30'
 
-  url "https://download.parallels.com/desktop/v#{version[%r{^\w+}]}/#{version}/ParallelsDesktop-#{version}.dmg"
+  url "https://download.parallels.com/desktop/v#{version.major}/#{version}/ParallelsDesktop-#{version}.dmg"
   name 'Parallels Desktop'
   homepage 'https://www.parallels.com/products/desktop/'
-  license :commercial
 
   app 'Parallels Desktop.app'
 
   postflight do
     # Unhide the application
-    system '/usr/bin/sudo', '-E', '--', 'chflags', 'nohidden', "#{appdir}/Parallels Desktop.app"
+    system_command '/usr/bin/chflags',
+                   args: ['nohidden', "#{appdir}/Parallels Desktop.app"],
+                   sudo: true
 
     # Run the initialization script
-    system '/usr/bin/sudo', '-E', '--',
-           "#{appdir}/Parallels Desktop.app/Contents/MacOS/inittool",
-           'init', '-b', "#{appdir}/Parallels Desktop.app"
+    system_command "#{appdir}/Parallels Desktop.app/Contents/MacOS/inittool",
+                   args: ['init', '-b', "#{appdir}/Parallels Desktop.app"],
+                   sudo: true
   end
 
   uninstall_preflight do
@@ -24,11 +25,13 @@ cask 'parallels-desktop' do
   end
 
   uninstall delete: [
-                      '/usr/bin/prl_convert',
-                      '/usr/bin/prl_disk_tool',
-                      '/usr/bin/prl_perf_ctl',
-                      '/usr/bin/prlctl',
-                      '/usr/bin/prlsrvctl',
+                      '/usr/local/bin/prl_convert',
+                      '/usr/local/bin/prl_disk_tool',
+                      '/usr/local/bin/prl_perf_ctl',
+                      '/usr/local/bin/prlcore2dmp',
+                      '/usr/local/bin/prlctl',
+                      '/usr/local/bin/prlexec',
+                      '/usr/local/bin/prlsrvctl',
                     ]
 
   zap       delete: [

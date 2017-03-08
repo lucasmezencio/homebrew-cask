@@ -1,14 +1,13 @@
 cask 'gnucash' do
-  version '2.6.13-1,a'
-  sha256 '722182df86530337b98ff8876a1836b21ecaa5453646ad9e711b02592de1323b'
+  version '2.6.15-1'
+  sha256 '009a33dc8d0ac6dd73a380085a62900fcc469e290c0d5001970c87c7a9d7d9a5'
 
   # github.com/Gnucash/gnucash was verified as official when first introduced to the cask
-  url "https://github.com/Gnucash/gnucash/releases/download/#{version.major_minor_patch}#{version.after_comma}/Gnucash-Intel-#{version.before_comma}.dmg"
+  url "https://github.com/Gnucash/gnucash/releases/download/#{version.major_minor_patch}/Gnucash-Intel-#{version}.dmg"
   appcast 'https://github.com/Gnucash/gnucash/releases.atom',
-          checkpoint: '186ebe2f93a3a6f6a1673d0f0e597e5eda375e881b10d0121938d8e0007ddbed'
+          checkpoint: '7e9f730f8d4d5434a3da8c14a5880d8d253ff7e17ca3cb7036a5677e1739ba80'
   name 'GnuCash'
   homepage 'https://www.gnucash.org/'
-  license :gpl
 
   app 'Gnucash.app'
   app 'FinanceQuote Update.app'

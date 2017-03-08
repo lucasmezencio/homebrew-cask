@@ -1,11 +1,12 @@
 cask 'whatroute' do
-  version '1.13.1'
-  sha256 '34a37acea1285b6a2c28bc18b81974b1214fbbf019c0ef9fad32844bb780cc56'
+  version '2.0.13'
+  sha256 '920c088f9c0b80b78eb632c64119c81096497536ca62e4ce428516c3471be5c5'
 
-  url "https://www.whatroute.net/software/whatroute-#{version}.dmg"
+  url "https://downloads.whatroute.net/software/whatroute-#{version}.zip"
   name 'WhatRoute'
   homepage 'https://www.whatroute.net/'
-  license :gratis
+
+  depends_on macos: '>= :yosemite'
 
   app 'WhatRoute.app'
 end

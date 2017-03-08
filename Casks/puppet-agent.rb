@@ -1,25 +1,22 @@
 cask 'puppet-agent' do
-  version '1.5.2-1'
+  version '1.9.0-1'
 
-  if MacOS.version == :mavericks
-    sha256 'bc75b261b2c1e5ed18599e63848e22fd4fca440242ba31391617a9a59806ef7a'
-  elsif MacOS.version == :yosemite
-    sha256 'ba9d22b4992f96f6e100e689f92f81e4cabb0459730459d9b53fe54c59b392a4'
-  else # MacOS.version == :el_capitan
-    sha256 '67613f23e6e7708fd1f8ddaa8528260cce176c4d46d7c3d666c236ea0edd1c8c'
+  if MacOS.version == :yosemite
+    sha256 '18e6eb90656e90f98ee4197a442a0d40bfb2a2e72ea0582e514429322dd75eb0'
+  elsif MacOS.version == :el_capitan
+    sha256 '8bb89eaf4b4b36e8e2937bfe888a2464fbadd9797142c8c534d4c3a6152c1c53'
+  else
+    sha256 'ebc89b367ce9358df9cc729b3ec15c816079ba857c36844671f784f2aee9af74'
   end
 
   # downloads.puppetlabs.com was verified as official when first introduced to the cask
   url "https://downloads.puppetlabs.com/mac/#{MacOS.version}/PC1/x86_64/puppet-agent-#{version}.osx#{MacOS.version}.dmg"
+  appcast 'https://downloads.puppetlabs.com/mac/10.12/PC1/x86_64/',
+          checkpoint: 'dbc2cf5aedba48d58d0e8f559297fb968789e92da59aba41e0ff1dea18818957'
   name 'Puppet Agent'
-  homepage 'https://docs.puppet.com/puppet/4.5/reference/about_agent.html'
-  license :oss # all Apache 2 except for the vendored OpenSSL + Ruby
+  homepage 'https://docs.puppet.com/puppet/4.5/about_agent.html'
 
-  depends_on macos: [
-                      :mavericks,
-                      :yosemite,
-                      :el_capitan,
-                    ]
+  depends_on macos: '>= :yosemite'
 
   pkg "puppet-agent-#{version}-installer.pkg"
 

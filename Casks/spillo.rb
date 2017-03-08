@@ -1,14 +1,13 @@
 cask 'spillo' do
-  version '126_1.8.5'
-  sha256 '37172b7716fab717c15212653964cf2579690f40713663c3eb07113e68cfb0c5'
+  version '149_1.9.11'
+  sha256 'd9292967da8470abc895a24abcedc3e0def01c780aed1d0f1bd788886d419727'
 
   # s3.amazonaws.com/bananafish-builds/spillo was verified as official when first introduced to the cask
   url "https://s3.amazonaws.com/bananafish-builds/spillo/spillo_#{version}.zip"
   appcast 'https://bananafishsoftware.com/feeds/spillo.xml',
-          checkpoint: '3cba1573938d8c1653cfe6d2ffaf4d78a2cd2d0b49a53195a67ead0e84a9a1d7'
+          checkpoint: '21829106f7be0be62588391ba35eb4f4eac120ce75d2b68cbf9f63aa63d1731f'
   name 'Spillo'
   homepage 'https://bananafishsoftware.com/products/spillo/'
-  license :commercial
 
   app 'Spillo.app'
 end

@@ -1,13 +1,12 @@
 cask 'dingtalk' do
-  version '1.15.1'
-  sha256 '12bbec088f6783f7927ea3e2cb0c1f761b66268a2e19ca5a691593217987a5c0'
+  version '3.4.2'
+  sha256 '75124c57e17b29d4ac111cda814ffa895be567268cde1e35d8d6483c110c601f'
 
-  # taobaocdn.com/dingtalk-desktop was verified as official when first introduced to the cask
-  url "http://download.taobaocdn.com/dingtalk-desktop/Release/install/DingTalk_v#{version}.dmg"
+  # download.alicdn.com/dingtalk-desktop was verified as official when first introduced to the cask
+  url "https://download.alicdn.com/dingtalk-desktop/mac_dmg/Release/DingTalk_v#{version}.dmg"
   name 'DingTalk'
   name '钉钉'
   homepage 'https://www.dingtalk.com/'
-  license :commercial
 
   app '钉钉.app'
 end

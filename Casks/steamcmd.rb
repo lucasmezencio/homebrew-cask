@@ -6,7 +6,6 @@ cask 'steamcmd' do
   url 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_osx.tar.gz'
   name 'SteamCMD'
   homepage 'https://developer.valvesoftware.com/wiki/SteamCMD'
-  license :gratis
 
   auto_updates true
 
@@ -19,6 +18,6 @@ cask 'steamcmd' do
       #!/bin/sh
       exec '#{staged_path}/steamcmd.sh' "$@"
     EOS
-    FileUtils.chmod '+x', shimscript
+    set_permissions shimscript, '+x'
   end
 end

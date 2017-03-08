@@ -1,14 +1,13 @@
 cask 'qtox' do
-  version '1.4.1.1'
-  sha256 'e0dd8ecab2dc39bba1e6f34e44927e7bee9ca0f55f4c433f16079d4ba5cf4ab8'
+  version '1.8.1'
+  sha256 '9fd22b6fe650e610f8f539a4d440a5cf95ff9e2c186efce94e8a5a486bed639f'
 
   # github.com/tux3/qTox was verified as official when first introduced to the cask
   url "https://github.com/tux3/qTox/releases/download/v#{version}/qTox.dmg"
   appcast 'https://github.com/tux3/qtox/releases.atom',
-          checkpoint: '3ddde03e902cc0266f14fc93268cb8ed29f774354677a3af78f7537cb17393d8'
+          checkpoint: '22955c01913765dc961d2959c3670ab0e37df11a1dd7b48909310f509436d962'
   name 'qTox'
   homepage 'https://qtox.github.io/'
-  license :gpl
 
   app 'qTox.app'
 end

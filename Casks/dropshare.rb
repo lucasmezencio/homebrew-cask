@@ -1,14 +1,21 @@
 cask 'dropshare' do
-  version '4-4225'
-  sha256 '5df1c6b3881a4154739d46c54ffaf788f4510b5993d2a3f13a16906376488bcc'
+  version '4.5.4,4564'
+  sha256 '4b8d7eda24a0025957b8f2c3299fcefd45b2f614a4506f342c54f4019a938096'
 
   # d2wvuuix8c9e48.cloudfront.net was verified as official when first introduced to the cask
-  url "https://d2wvuuix8c9e48.cloudfront.net/Dropshare#{version}.app.zip"
-  appcast 'https://getdropsha.re/sparkle/Dropshare4.xml',
-          checkpoint: '73ce42eac41c72ca5f1f4dacf8d7331122f75f30288137bf28d03ef9f0cd4f67'
+  url "https://d2wvuuix8c9e48.cloudfront.net/Dropshare#{version.major}-#{version.after_comma}.app.zip"
+  appcast "https://getdropsha.re/sparkle/Dropshare#{version.major}.xml",
+          checkpoint: 'e71a7dc770d837889a71191a33868f10b597d2fc6e79c38df1b269522fb25adf'
   name 'Dropshare'
   homepage 'https://getdropsha.re/'
-  license :commercial
 
-  app 'Dropshare 4.app'
+  app "Dropshare #{version.major}.app"
+
+  zap delete: [
+                '~/Library/Application Support/Dropshare 4',
+                '~/Library/Caches/net.mkswap.Dropshare4',
+                '~/Library/Cookies/net.mkswap.Dropshare4.binarycookies',
+                '~/Library/Logs/Dropshare 4',
+                '~/Library/Preferences/net.mkswap.Dropshare4.plist',
+              ]
 end

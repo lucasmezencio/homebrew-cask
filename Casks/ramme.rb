@@ -1,13 +1,12 @@
 cask 'ramme' do
-  version '2.0.0'
-  sha256 'd5769f61184d4c09f2a6bc0bd8e00b1d51582fb1672fc1cd3f457527bfd91a9b'
+  version '3.0.3'
+  sha256 '051a4d23e5e3b58c9e6ac1879baa15a4ca1230b85c1b5f2051cd871324d3889d'
 
-  url "https://github.com/terkelg/ramme/releases/download/#{version}/Ramme-osx-#{version}.zip"
+  url "https://github.com/terkelg/ramme/releases/download/v#{version}/Ramme-#{version}.dmg"
   appcast 'https://github.com/terkelg/ramme/releases.atom',
-          checkpoint: '47a0d1cd3f1aafe8d859b86e4930d0dfcf0e43452b1a6a31fc46a53d224714d9'
+          checkpoint: '5d776a973b82369008f319d2cec1189c0114116abb62e54246174a62fc1ecb8c'
   name 'Ramme'
   homepage 'https://github.com/terkelg/ramme/'
-  license :mit
 
   app 'Ramme.app'
 end

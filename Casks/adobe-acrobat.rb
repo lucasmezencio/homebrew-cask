@@ -6,10 +6,9 @@ cask 'adobe-acrobat' do
       user_agent: :fake,
       cookies:    { 'MM_TRIALS' => '1234' }
   name 'Adobe Acrobat Pro DC'
-  homepage 'https://www.adobe.com/products/reader.html'
-  license :commercial
+  homepage 'https://acrobat.adobe.com/us/en/acrobat/pdf-reader.html'
 
-  depends_on macos: '>= 10.9'
+  depends_on macos: '>= :mavericks'
 
   pkg "Acrobat #{version}/Acrobat #{version} Installer.pkg"
 

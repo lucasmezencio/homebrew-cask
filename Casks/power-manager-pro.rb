@@ -1,13 +1,12 @@
 cask 'power-manager-pro' do
-  version '4.5.3'
-  sha256 '9ba78659549e9750b05dd89b42ca4e5cc9ee5af0b564c9f0e80f392bcdb3d4d6'
+  version '4.5.6'
+  sha256 '907c7394b9c2c26fc99077d6763b69df5162fd312e31e381d116dbf6757d8d3f'
 
   url "https://www.dssw.co.uk/powermanager/dsswpowermanagerpro-#{version.no_dots}.dmg"
   appcast 'https://version.dssw.co.uk/powermanager/professional',
-          checkpoint: 'f85a40c960f6bb324e87ede66a5a742d38c3089fbaf753a5bab420aa72139ed6'
+          checkpoint: '0f66051904c604fdea88e35dd0dea93bf3a6f3d935d90e3acd7e8e499419fe35'
   name 'Power Manager Pro'
   homepage 'https://www.dssw.co.uk/powermanager/professional/'
-  license :commercial
 
   auto_updates true
   depends_on macos: '>= :lion'

@@ -1,12 +1,20 @@
 cask 'insomnia' do
-  version '3.2.6'
-  sha256 '560a73ad1dc6f36d823401beec3816951b1bdf2e3f7b391cdc7f35aa40f2d8ec'
+  version '4.2.14'
+  sha256 '24b26849ad84ca452a969d6ae07f44a55f2dcc48b5fba032c1967ae3e073d4d9'
 
-  # s3.amazonaws.com/builds-insomnia-rest was verified as official when first introduced to the cask
-  url "https://s3.amazonaws.com/builds-insomnia-rest/mac/Insomnia-#{version}.dmg"
+  url "https://downloads.insomnia.rest/mac/Insomnia-#{version}.dmg"
+  appcast 'https://insomnia.rest/changelog/index.xml',
+          checkpoint: 'b42ed75451490c58029e868535a22c773d8f0f57d4115e26ebe18cc4e16761ea'
   name 'Insomnia'
   homepage 'https://insomnia.rest/'
-  license :unknown
 
   app 'Insomnia.app'
+
+  zap delete: [
+                '~/Library/Application Support/Insomnia',
+                '~/Library/Caches/com.insomnia.app',
+                '~/Library/Preferences/com.insomnia.app.helper.plist',
+                '~/Library/Preferences/com.insomnia.app.plist',
+                '~/Library/Saved Application State/com.insomnia.app.savedState',
+              ]
 end
